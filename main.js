@@ -1,11 +1,13 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
-const { autoUpdater } = require("electron-updater");
 const path = require("path");
-const fs = require("fs");
 
-// Configure auto-updater
-autoUpdater.autoDownload = true;
-autoUpdater.autoInstallOnAppQuit = true;
+let autoUpdater;
+try {
+  autoUpdater = require("electron-updater").autoUpdater;
+} catch (error) {
+  console.log('Auto-updater not available:', error.message);
+  autoUpdater = null;
+}
 
 let mainWindow;
 
@@ -31,10 +33,10 @@ function createWindow() {
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
     
-    // Check for updates after window is shown
-    if (process.env.NODE_ENV !== 'development') {
+    // Check for updates if available
+    if (autoUpdater) {
       setTimeout(() => {
-        autoUpdater.checkForUpdatesAndNotify();
+        checkForUpdates();
       }, 2000);
     }
   });
@@ -42,31 +44,46 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
-
-  // Remove DevTools for production
-  // mainWindow.webContents.openDevTools();
 }
 
-// Auto-updater events
-autoUpdater.on('update-available', () => {
-  if (mainWindow) {
-    mainWindow.webContents.send('update-available');
+function checkForUpdates() {
+  if (!autoUpdater || process.env.NODE_ENV === 'development') {
+    return;
   }
-});
+  
+  try {
+    autoUpdater.autoDownload = true;
+    autoUpdater.autoInstallOnAppQuit = true;
 
-autoUpdater.on('update-downloaded', () => {
-  if (mainWindow) {
-    mainWindow.webContents.send('update-downloaded');
+    autoUpdater.on('update-available', () => {
+      if (mainWindow) {
+        mainWindow.webContents.send('update-available');
+      }
+    });
+
+    autoUpdater.on('update-downloaded', () => {
+      if (mainWindow) {
+        mainWindow.webContents.send('update-downloaded');
+      }
+    });
+
+    autoUpdater.on('error', (err) => {
+      console.error('Auto-updater error:', err);
+    });
+
+    autoUpdater.checkForUpdatesAndNotify();
+  } catch (error) {
+    console.error('Failed to check for updates:', error);
   }
-});
-
-autoUpdater.on('error', (err) => {
-  console.error('Auto-updater error:', err);
-});
+}
 
 // IPC handlers
 ipcMain.handle('restart-and-update', () => {
-  autoUpdater.quitAndInstall();
+  if (autoUpdater) {
+    autoUpdater.quitAndInstall();
+  } else {
+    app.quit();
+  }
 });
 
 ipcMain.handle('get-app-version', () => {
