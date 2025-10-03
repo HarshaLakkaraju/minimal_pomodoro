@@ -1,5 +1,5 @@
 {
-  "name": "floating-pomodoro-timer",
+  "name": "minimal_Pomodoro",
   "version": "1.0.1",
   "description": "A minimal floating Pomodoro timer with rounded corners",
   "main": "main.js",
@@ -19,7 +19,7 @@
   },
   "build": {
     "appId": "com.yourname.pomodoro-timer",
-    "productName": "Pomodoro Timer",
+    "productName": "minimal_Pomodoro",
     "directories": {
       "output": "dist"
     },
@@ -50,7 +50,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Pomodoro Timer",
+      "shortcutName": "minimal_Pomodoro",
       "menuCategory": "Productivity Tools"
      
     },
@@ -60,9 +60,11 @@
       "repo": "minimal_pomodoro"
     }
   },
+ "dependencies": {
+    "electron-updater": "^6.0.0"
+  },
   "devDependencies": {
     "electron": "^29.0.0",
-    "electron-builder": "^24.13.3",
-    "electron-updater": "^6.6.2"
+    "electron-builder": "^24.13.3"
   }
 }
