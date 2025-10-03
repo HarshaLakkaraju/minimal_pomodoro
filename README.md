@@ -2,7 +2,7 @@
 
 A beautiful, always-on-top Pomodoro timer that helps you stay focused and productive.
 
-![Screenshot](assets\Screenshot.png)
+![Screenshot](assets/Screenshot.png)
 
 ## 🚀 Quick Start
 
