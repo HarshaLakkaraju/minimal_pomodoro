@@ -1,6 +1,6 @@
 {
   "name": "minimal_Pomodoro",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A minimal floating Pomodoro timer with rounded corners",
   "main": "main.js",
   "author": "Harsha Lakkaraju",
@@ -52,7 +52,6 @@
       "createStartMenuShortcut": true,
       "shortcutName": "minimal_Pomodoro",
       "menuCategory": "Productivity Tools"
-     
     },
     "publish": {
       "provider": "github",
@@ -60,7 +59,7 @@
       "repo": "minimal_pomodoro"
     }
   },
- "dependencies": {
+  "dependencies": {
     "electron-updater": "^6.0.0"
   },
   "devDependencies": {
