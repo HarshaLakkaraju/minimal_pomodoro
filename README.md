@@ -3,24 +3,57 @@
 A beautiful, always-on-top Pomodoro timer that helps you stay focused and productive.
 
 ![Screenshot](assets/Screenshot.png)
+![Screenshot](assets/Screenshot_2.png)
+
 
 ## 🚀 Quick Start
 
+### 📥 Easy Installation (Recommended)
+
 1. **[Download Latest Release](https://github.com/HarshaLakkaraju/minimal_pomodoro/releases)**
-2. Run `minimal Pomodoro  Setup.exe`
+2. Run `Minimal Pomodoro Setup.exe`
 3. Follow the installation wizard
 4. Launch from Start Menu
 
-**No installation needed?** Try the [portable version](https://github.com/HarshaLakkaraju/minimal_pomodoro/releases)!
+💡 **No installation needed?** Try the [portable version](https://github.com/HarshaLakkaraju/minimal_pomodoro/releases)!
+
+---
+
+### 👨‍💻 Developer Installation (Run from Source)
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/HarshaLakkaraju/minimal_pomodoro.git
+   cd minimal_pomodoro
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the app:
+
+   ```bash
+   npm start
+   ```
+
+---
+
 
 ## ✨ Features
 
-- 🎯 **Always on top** - Stays visible over other windows
-- ⌨️ **Keyboard controlled** - Full control without mouse
-- 🔄 **Auto-updates** - Always have the latest version
-- 🎨 **Minimal design** - Clean and distraction-free
-- 🔔 **Smart notifications** - Visual and sound alerts
-- ⚡ **Lightweight** - Uses minimal system resources
+* 🎯 **Always on top** – Stays visible over other windows
+* ⌨️ **Keyboard controlled** – Full control without mouse
+* 🔄 **Auto-updates** – Always have the latest version
+* 🎨 **Minimal design** – Clean and distraction-free
+* 🔔 **Smart notifications** – Visual and sound alerts
+* ⚡ **Lightweight** – Uses minimal system resources
+
+
+
 
 ## ⌨️ Keyboard Shortcuts
 
