@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" tabindex="0"> <!-- Added tabindex="0" to make it focusable -->
+    <div id="top-bar">
+      <!-- Add invisible play/pause button on the left -->
+      <button id="leftPlayPause" class="left-play-pause">▶</button>
+      <div id="timer">45:00</div>
+      <button id="menuBtn">⋮</button>
+    </div>
+    
+    <div id="menu" class="hidden">
+      <input id="timeInput" type="number" min="1" max="180" value="45"/> min
+      <div id="controls">
+        <button id="startPause">Start</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+  <script src="timer.js"></script>
+</body>
+</html>
