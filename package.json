@@ -1,6 +1,6 @@
 {
   "name": "minimal_Pomodoro",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A minimal floating Pomodoro timer with rounded corners",
   "main": "main.js",
   "author": "Harsha Lakkaraju",
