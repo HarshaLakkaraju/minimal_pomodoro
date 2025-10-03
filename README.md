@@ -2,12 +2,12 @@
 
 A beautiful, always-on-top Pomodoro timer that helps you stay focused and productive.
 
-![Screenshot](assets/screenshot.png)
+![Screenshot](assets/Screenshot.png)
 
 ## 🚀 Quick Start
 
 1. **[Download Latest Release](https://github.com/HarshaLakkaraju/minimal_pomodoro/releases)**
-2. Run `Pomodoro Timer Setup.exe`
+2. Run `minimal Pomodoro  Setup.exe`
 3. Follow the installation wizard
 4. Launch from Start Menu
 
